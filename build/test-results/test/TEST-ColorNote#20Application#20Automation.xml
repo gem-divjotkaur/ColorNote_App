@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ColorNote Application Automation" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-09-08T05:56:07" hostname="GEMGN-210145" time="111.185">
+  <properties/>
+  <testcase name="Add 5 text notes in the ColorNote Application" classname="ColorNote Application Automation" time="45.838"/>
+  <testcase name="Change color of the text notes" classname="ColorNote Application Automation" time="30.086"/>
+  <testcase name="Print the time of each note" classname="ColorNote Application Automation" time="2.43"/>
+  <testcase name="Change the first day of the week" classname="ColorNote Application Automation" time="7.618"/>
+  <testcase name="Search for the 3rd text note" classname="ColorNote Application Automation" time="4.896"/>
+  <testcase name="Deletion of the text notes" classname="ColorNote Application Automation" time="12.748"/>
+  <testcase name="Archive a text note" classname="ColorNote Application Automation" time="7.568"/>
+  <system-out><![CDATA[
+@SmokeTest
+Scenario: Add 5 text notes in the ColorNote Application                            # src/test/resources/features/Feature.feature:4
+  Given User launches the "ColorNote" Application                                  # stepdefinitions.StepDefinitions.launchApp(java.lang.String)
+  When User allows the "ColorNote" Application to access "photos, media and files" # stepdefinitions.StepDefinitions.allowAccess(java.lang.String,java.lang.String)
+  And User creates 5 notes in the "ColorNote" Application                          # stepdefinitions.StepDefinitions.createNotes(int,java.lang.String)
+11:26:52.755 [Test worker] INFO logger.Loggers - 
+  Then User verifies 5 are displayed                                               # stepdefinitions.StepDefinitions.verifyNotes(int)
+
+@SmokeTest
+Scenario: Change color of the text notes                                                                         # src/test/resources/features/Feature.feature:10
+  Given User changes the color of each text in the "ColorNote" Application as "RED, ORANGE, YELLOW, GREEN, BLUE" # stepdefinitions.StepDefinitions.changeColor(java.lang.String,java.lang.String)
+
+@SmokeTest
+Scenario: Print the time of each note                                 # src/test/resources/features/Feature.feature:13
+11:27:23.907 [Test worker] INFO logger.Loggers - 11:26 AM
+11:27:24.249 [Test worker] INFO logger.Loggers - 11:26 AM
+11:27:24.666 [Test worker] INFO logger.Loggers - 11:26 AM
+11:27:24.987 [Test worker] INFO logger.Loggers - 11:26 AM
+11:27:25.277 [Test worker] INFO logger.Loggers - 11:26 AM
+  Given User got the time of each text in the "ColorNote" Application # stepdefinitions.StepDefinitions.getTime(java.lang.String)
+
+@SmokeTest
+Scenario: Change the first day of the week                # src/test/resources/features/Feature.feature:16
+  Given User tap on the icon to open "Settings"           # stepdefinitions.StepDefinitions.clickOnIcon(java.lang.String)
+  When User selects the option "Settings"                 # stepdefinitions.StepDefinitions.openSettings(java.lang.String)
+  And User scrolls till option "First day of week"        # stepdefinitions.StepDefinitions.scroll(java.lang.String)
+  Then User selects the first day of the week as "MONDAY" # stepdefinitions.StepDefinitions.selectDay(java.lang.String)
+
+@SmokeTest
+Scenario: Search for the 3rd text note                                  # src/test/resources/features/Feature.feature:22
+  Given User is on the "Home Page"                                      # stepdefinitions.StepDefinitions.home(java.lang.String)
+  When User searches for the 3 text note in the "ColorNote" Application # stepdefinitions.StepDefinitions.searchBox(int,java.lang.String)
+11:27:37.831 [Test worker] INFO logger.Loggers - Verify the 3rd searched note by printing the obtained value :user created 3 note in the ColorNote App
+  Then User verify for "3rd" the text note                              # stepdefinitions.StepDefinitions.verifyText(java.lang.String)
+
+@SmokeTest
+Scenario: Deletion of the text notes                                          # src/test/resources/features/Feature.feature:27
+  Given User is navigated to the "Home Page"                                  # stepdefinitions.StepDefinitions.navigateHomePage(java.lang.String)
+  When User deletes the "2nd" text note from the "ColorNote" Application      # stepdefinitions.StepDefinitions.deleteNotes(java.lang.String,java.lang.String)
+  And User again deletes the "4th" text note from the "ColorNote" Application # stepdefinitions.StepDefinitions.deleteAgain(java.lang.String,java.lang.String)
+11:27:50.581 [Test worker] INFO logger.Loggers - Data inside first deleted note : user created 4 note in the ColorNote App
+11:27:50.592 [Test worker] INFO logger.Loggers - Data inside second deleted note : user created 2 note in the ColorNote App
+  Then User verifies for the deleted text notes                               # stepdefinitions.StepDefinitions.verifyDeleteNotes()
+
+@SmokeTest
+Scenario: Archive a text note                              # src/test/resources/features/Feature.feature:33
+  Given User visit "Home Page" again                       # stepdefinitions.StepDefinitions.homePageAgain(java.lang.String)
+  When User tap on "1st" note                              # stepdefinitions.StepDefinitions.tapFirstNote(java.lang.String)
+  And User tap on "Menu" button to choose option "Archive" # stepdefinitions.StepDefinitions.chooseArchive(java.lang.String,java.lang.String)
+11:27:58.361 [Test worker] INFO logger.Loggers - data inside archived text note 
+  Then User verifies for the archived text note            # stepdefinitions.StepDefinitions.verifyArchiveText()
+]]></system-out>
+  <system-err><![CDATA[Sep 08, 2023 11:26:20 AM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class ColorNote Application Automation</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class ColorNote Application Automation</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; ColorNote Application Automation</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">7</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1m51.18s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Add 5 text notes in the ColorNote Application</td>
+<td class="success">45.838s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Archive a text note</td>
+<td class="success">7.568s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Change color of the text notes</td>
+<td class="success">30.086s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Change the first day of the week</td>
+<td class="success">7.618s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Deletion of the text notes</td>
+<td class="success">12.748s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Print the time of each note</td>
+<td class="success">2.430s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Search for the 3rd text note</td>
+<td class="success">4.896s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+@SmokeTest
+Scenario: Add 5 text notes in the ColorNote Application                            # src/test/resources/features/Feature.feature:4
+  Given User launches the &quot;ColorNote&quot; Application                                  # stepdefinitions.StepDefinitions.launchApp(java.lang.String)
+  When User allows the &quot;ColorNote&quot; Application to access &quot;photos, media and files&quot; # stepdefinitions.StepDefinitions.allowAccess(java.lang.String,java.lang.String)
+  And User creates 5 notes in the &quot;ColorNote&quot; Application                          # stepdefinitions.StepDefinitions.createNotes(int,java.lang.String)
+11:26:52.755 [Test worker] INFO logger.Loggers - 
+  Then User verifies 5 are displayed                                               # stepdefinitions.StepDefinitions.verifyNotes(int)
+
+@SmokeTest
+Scenario: Change color of the text notes                                                                         # src/test/resources/features/Feature.feature:10
+  Given User changes the color of each text in the &quot;ColorNote&quot; Application as &quot;RED, ORANGE, YELLOW, GREEN, BLUE&quot; # stepdefinitions.StepDefinitions.changeColor(java.lang.String,java.lang.String)
+
+@SmokeTest
+Scenario: Print the time of each note                                 # src/test/resources/features/Feature.feature:13
+11:27:23.907 [Test worker] INFO logger.Loggers - 11:26 AM
+11:27:24.249 [Test worker] INFO logger.Loggers - 11:26 AM
+11:27:24.666 [Test worker] INFO logger.Loggers - 11:26 AM
+11:27:24.987 [Test worker] INFO logger.Loggers - 11:26 AM
+11:27:25.277 [Test worker] INFO logger.Loggers - 11:26 AM
+  Given User got the time of each text in the &quot;ColorNote&quot; Application # stepdefinitions.StepDefinitions.getTime(java.lang.String)
+
+@SmokeTest
+Scenario: Change the first day of the week                # src/test/resources/features/Feature.feature:16
+  Given User tap on the icon to open &quot;Settings&quot;           # stepdefinitions.StepDefinitions.clickOnIcon(java.lang.String)
+  When User selects the option &quot;Settings&quot;                 # stepdefinitions.StepDefinitions.openSettings(java.lang.String)
+  And User scrolls till option &quot;First day of week&quot;        # stepdefinitions.StepDefinitions.scroll(java.lang.String)
+  Then User selects the first day of the week as &quot;MONDAY&quot; # stepdefinitions.StepDefinitions.selectDay(java.lang.String)
+
+@SmokeTest
+Scenario: Search for the 3rd text note                                  # src/test/resources/features/Feature.feature:22
+  Given User is on the &quot;Home Page&quot;                                      # stepdefinitions.StepDefinitions.home(java.lang.String)
+  When User searches for the 3 text note in the &quot;ColorNote&quot; Application # stepdefinitions.StepDefinitions.searchBox(int,java.lang.String)
+11:27:37.831 [Test worker] INFO logger.Loggers - Verify the 3rd searched note by printing the obtained value :user created 3 note in the ColorNote App
+  Then User verify for &quot;3rd&quot; the text note                              # stepdefinitions.StepDefinitions.verifyText(java.lang.String)
+
+@SmokeTest
+Scenario: Deletion of the text notes                                          # src/test/resources/features/Feature.feature:27
+  Given User is navigated to the &quot;Home Page&quot;                                  # stepdefinitions.StepDefinitions.navigateHomePage(java.lang.String)
+  When User deletes the &quot;2nd&quot; text note from the &quot;ColorNote&quot; Application      # stepdefinitions.StepDefinitions.deleteNotes(java.lang.String,java.lang.String)
+  And User again deletes the &quot;4th&quot; text note from the &quot;ColorNote&quot; Application # stepdefinitions.StepDefinitions.deleteAgain(java.lang.String,java.lang.String)
+11:27:50.581 [Test worker] INFO logger.Loggers - Data inside first deleted note : user created 4 note in the ColorNote App
+11:27:50.592 [Test worker] INFO logger.Loggers - Data inside second deleted note : user created 2 note in the ColorNote App
+  Then User verifies for the deleted text notes                               # stepdefinitions.StepDefinitions.verifyDeleteNotes()
+
+@SmokeTest
+Scenario: Archive a text note                              # src/test/resources/features/Feature.feature:33
+  Given User visit &quot;Home Page&quot; again                       # stepdefinitions.StepDefinitions.homePageAgain(java.lang.String)
+  When User tap on &quot;1st&quot; note                              # stepdefinitions.StepDefinitions.tapFirstNote(java.lang.String)
+  And User tap on &quot;Menu&quot; button to choose option &quot;Archive&quot; # stepdefinitions.StepDefinitions.chooseArchive(java.lang.String,java.lang.String)
+11:27:58.361 [Test worker] INFO logger.Loggers - data inside archived text note 
+  Then User verifies for the archived text note            # stepdefinitions.StepDefinitions.verifyArchiveText()
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>Sep 08, 2023 11:26:20 AM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+INFO: Detected dialect: W3C
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.4</a> at 08-Sep-2023, 11:27:58 am</p>
+</div>
+</div>
+</body>
+</html>

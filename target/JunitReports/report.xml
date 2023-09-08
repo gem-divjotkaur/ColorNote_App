@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="111.261" tests="7" skipped="0" failures="0" errors="0">
+<testcase classname="ColorNote Application Automation" name="Add 5 text notes in the ColorNote Application" time="45.77">
+<system-out><![CDATA[
+Given User launches the "ColorNote" Application.............................passed
+When User allows the "ColorNote" Application to access "photos, media and files".passed
+And User creates 5 notes in the "ColorNote" Application.....................passed
+Then User verifies 5 are displayed..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="ColorNote Application Automation" name="Change color of the text notes" time="30.073">
+<system-out><![CDATA[
+Given User changes the color of each text in the "ColorNote" Application as "RED, ORANGE, YELLOW, GREEN, BLUE".passed
+]]></system-out>
+</testcase>
+<testcase classname="ColorNote Application Automation" name="Print the time of each note" time="2.425">
+<system-out><![CDATA[
+Given User got the time of each text in the "ColorNote" Application.........passed
+]]></system-out>
+</testcase>
+<testcase classname="ColorNote Application Automation" name="Change the first day of the week" time="7.613">
+<system-out><![CDATA[
+Given User tap on the icon to open "Settings"...............................passed
+When User selects the option "Settings".....................................passed
+And User scrolls till option "First day of week"............................passed
+Then User selects the first day of the week as "MONDAY".....................passed
+]]></system-out>
+</testcase>
+<testcase classname="ColorNote Application Automation" name="Search for the 3rd text note" time="4.892">
+<system-out><![CDATA[
+Given User is on the "Home Page"............................................passed
+When User searches for the 3 text note in the "ColorNote" Application.......passed
+Then User verify for "3rd" the text note....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="ColorNote Application Automation" name="Deletion of the text notes" time="12.744">
+<system-out><![CDATA[
+Given User is navigated to the "Home Page"..................................passed
+When User deletes the "2nd" text note from the "ColorNote" Application......passed
+And User again deletes the "4th" text note from the "ColorNote" Application.passed
+Then User verifies for the deleted text notes...............................passed
+]]></system-out>
+</testcase>
+<testcase classname="ColorNote Application Automation" name="Archive a text note" time="7.564">
+<system-out><![CDATA[
+Given User visit "Home Page" again..........................................passed
+When User tap on "1st" note.................................................passed
+And User tap on "Menu" button to choose option "Archive"....................passed
+Then User verifies for the archived text note...............................passed
+]]></system-out>
+</testcase>
+</testsuite>

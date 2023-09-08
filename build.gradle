@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation group: 'io.appium', name: 'java-client', version: '7.3.0'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.13.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.13.0'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.13.0'
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+//    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.20.0'
+    // SLF4J API
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    // Logging implementation (Logback)
+    implementation 'ch.qos.logback:logback-classic:1.2.6'
+}
+test {
+    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
+    filter {
+        includeTestsMatching "*.TestRunner" //Set to your Cucumber Runner directory/Package
+    }
+    systemProperties System.getProperties()
+}
+gradle.startParameter.continueOnFailure = true
